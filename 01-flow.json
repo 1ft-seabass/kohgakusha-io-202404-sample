@@ -1,0 +1,78 @@
+[
+    {
+        "id": "4260e6a606ac6ea9",
+        "type": "http in",
+        "z": "4cf90a22eb25dc52",
+        "name": "",
+        "url": "/api/get/json",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 200,
+        "y": 140,
+        "wires": [
+            [
+                "fa2f3db34f01e25e"
+            ]
+        ]
+    },
+    {
+        "id": "6ad2464d37930c48",
+        "type": "http response",
+        "z": "4cf90a22eb25dc52",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 690,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "fa2f3db34f01e25e",
+        "type": "change",
+        "z": "4cf90a22eb25dc52",
+        "name": "データ設定",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{}",
+                "tot": "json"
+            },
+            {
+                "t": "set",
+                "p": "payload.value1",
+                "pt": "msg",
+                "to": "Hello! Unity!",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "payload.value2",
+                "pt": "msg",
+                "to": "123456789",
+                "tot": "num"
+            },
+            {
+                "t": "set",
+                "p": "payload.value3",
+                "pt": "msg",
+                "to": "false",
+                "tot": "bool"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 430,
+        "y": 140,
+        "wires": [
+            [
+                "6ad2464d37930c48"
+            ]
+        ]
+    }
+]
