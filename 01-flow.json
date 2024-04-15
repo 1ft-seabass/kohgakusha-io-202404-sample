@@ -1,65 +1,68 @@
 [
     {
-        "id": "4260e6a606ac6ea9",
+        "id": "dac070dbc279f7fb",
         "type": "http in",
-        "z": "4cf90a22eb25dc52",
+        "z": "b812b7b7b881a76a",
         "name": "",
-        "url": "/api/get/json",
-        "method": "get",
+        "url": "/api/post/shiba",
+        "method": "post",
         "upload": false,
         "swaggerDoc": "",
-        "x": 200,
+        "x": 170,
         "y": 140,
         "wires": [
             [
-                "fa2f3db34f01e25e"
+                "a2fe26d12721d716"
             ]
         ]
     },
     {
-        "id": "6ad2464d37930c48",
+        "id": "56337bf5c013bd3e",
         "type": "http response",
-        "z": "4cf90a22eb25dc52",
+        "z": "b812b7b7b881a76a",
         "name": "",
         "statusCode": "",
         "headers": {},
-        "x": 690,
-        "y": 140,
+        "x": 630,
+        "y": 220,
         "wires": []
     },
     {
-        "id": "fa2f3db34f01e25e",
+        "id": "a2fe26d12721d716",
+        "type": "http request",
+        "z": "b812b7b7b881a76a",
+        "name": "柴犬 API",
+        "method": "GET",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "http://shibe.online/api/shibes",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 400,
+        "y": 140,
+        "wires": [
+            [
+                "50849fdb07c3cb0b"
+            ]
+        ]
+    },
+    {
+        "id": "50849fdb07c3cb0b",
         "type": "change",
-        "z": "4cf90a22eb25dc52",
-        "name": "データ設定",
+        "z": "b812b7b7b881a76a",
+        "name": "0 番目の URL 取得",
         "rules": [
             {
                 "t": "set",
                 "p": "payload",
                 "pt": "msg",
-                "to": "{}",
-                "tot": "json"
-            },
-            {
-                "t": "set",
-                "p": "payload.value1",
-                "pt": "msg",
-                "to": "Hello! Unity!",
-                "tot": "str"
-            },
-            {
-                "t": "set",
-                "p": "payload.value2",
-                "pt": "msg",
-                "to": "123456789",
-                "tot": "num"
-            },
-            {
-                "t": "set",
-                "p": "payload.value3",
-                "pt": "msg",
-                "to": "false",
-                "tot": "bool"
+                "to": "payload[0]",
+                "tot": "msg"
             }
         ],
         "action": "",
@@ -67,11 +70,11 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 430,
-        "y": 140,
+        "x": 390,
+        "y": 220,
         "wires": [
             [
-                "6ad2464d37930c48"
+                "56337bf5c013bd3e"
             ]
         ]
     }
