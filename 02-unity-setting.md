@@ -64,7 +64,7 @@ Name が聞かれるので NodeRedPostShiba と入力して Create and Add を�
 
 エディタが起動します。NodeRedPostShiba のスクリプトは以下を記述して保存します。
 
-<div>[csharp]
+```csharp
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -162,14 +162,14 @@ public class NodeRedPostShiba : MonoBehaviour, IPointerClickHandler
         }
     }
 }
-[/csharp]</div>
+```
 
 保存できたら以下のコードに注目します。
 
-<div>[csharp]
+```csharp
     // アクセスする URL
     string urlNodeRED = "ここにサーバーURLを入れる";
-[/csharp]</div>
+```
 
 「ここにサーバーURLを入れる」の部分を、今回の URL http://127.0.0.1:1880/api/post/shiba に変更しておきます。
 
